@@ -13,7 +13,7 @@
                     <p>123, New York, USA</p> <!--edit here-->
                     <textarea name="" id="" cols="30" rows="10"></textarea>
                     <div class="banner-btn">
-                        <a href="">join to event</a>
+                        <a href="{{route('event')}}">join to event</a>
                     </div>
                 </div>
             </div>
