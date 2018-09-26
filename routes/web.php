@@ -16,3 +16,5 @@
 //});
 
 Route::get('/', ['as'=>'main', 'uses'=>'MainController@show']);
+
+Route::get('/events', ['as'=>'events', 'uses'=>'EventsController@show']);

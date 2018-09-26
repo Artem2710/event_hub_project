@@ -26,7 +26,7 @@
                                         </span>
                                     </h1>
                                     <div class="banner-btn">
-                                        <a href="">show events</a>
+                                        <a href="{{route('events')}}">show events</a>
                                     </div>
 
                                 </section>
