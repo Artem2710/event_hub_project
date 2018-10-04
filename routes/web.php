@@ -17,6 +17,15 @@
 
 Route::get('/', ['as'=>'main', 'uses'=>'MainController@show']);
 
-Route::get('/events', ['as'=>'events', 'uses'=>'EventsController@show']);
-
 Route::get('/event', ['as'=>'event', 'uses'=>'EventController@show']);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('events', 'EventsController@index')->name('events.index');
+Route::get('events/{event}', 'EventsController@view')->name('event.view');
+
+//Route::get('/events/{event}', ['as'=>'event', 'uses'=>'EventController@show']);
+
+
+

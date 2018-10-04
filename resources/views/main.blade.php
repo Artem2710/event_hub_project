@@ -1,4 +1,4 @@
-@extends('header')
+@extends('layouts.app')
 
 
 @section('banner')
@@ -26,7 +26,7 @@
                                         </span>
                                     </h1>
                                     <div class="banner-btn">
-                                        <a href="{{route('events')}}">show events</a>
+                                        <a href="{{route('events.index')}}">show events</a>
                                     </div>
 
                                 </section>

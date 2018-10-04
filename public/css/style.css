@@ -324,6 +324,13 @@ img {
 .navbar {
     border: 0;
     margin-bottom: 0;
+    position: fixed;
+    width: 100%;
+    background: none;
+}
+.navbar-back{
+    /*background: darkgrey;*/
+    color: white !important;
 }
 
 .navbar-brand {
@@ -726,13 +733,13 @@ canvas {
 
 .single-contact {
     /*box-shadow: 0 0px 5px rgba(0, 0, 0, .2);*/
-    padding: 2%;
+    overflow:hidden;
 }
 
 /*-------- Contact area ends----------- */
 
 .events {
-    width: 25% !important;
+    width: 300px !important;
     margin: 0;
     height: 80%;
     position: absolute;
@@ -779,8 +786,7 @@ textarea {
 }
 
 .about-event {
-    background: #54454c;
-    height: 100%;
+    background: red;
     width: 100% !important;
     margin: 0 !important;
     padding-top: 60px;
@@ -793,7 +799,29 @@ textarea {
     /*bottom: 0px !important;*/
 /*}*/
 
+.list-events{
+    overflow-y:scroll;
+    height: 405px;
+    border-top: 1px solid darkgrey;
+}
+.flex{
+    display: flex;
+    position: relative;
+}
+.flex>a{
+    position: absolute;
+    right: 20px;
+}
+.post>a, .post>div{
+    margin-left: 5px;
+}
+.post:hover{
+    background: #F0FAFF;
+}
 
+.post:hover .desc{
+    color: black;
+}
 
 
 
