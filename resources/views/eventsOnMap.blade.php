@@ -9,8 +9,11 @@
                 <div class="single-contact text-left" style="">
                     <i class="fa fa-home"></i>
                     <h2>Location</h2>
-                    <p>123, New York, USA</p> <!--edit here-->
-                    {{--<textarea name="" id="" cols="30" rows="10">--}}
+                    @auth
+                        <a href="{{url('/create')}}">Add event +</a>
+                    @else
+                        <a href="{{ route('register') }}">Add event +</a>
+                    @endauth
                     <div class="list-events">
                         @foreach($events as $event)
                             <div class="post">
@@ -22,10 +25,6 @@
                             </div>
                         @endforeach
                     </div>
-                    {{--</textarea>--}}
-                    {{--<div class="banner-btn">--}}
-                    {{--<a href="{{route('event')}}">join to event</a>--}}
-                    {{--</div>--}}
                 </div>
             </div>
         </div>

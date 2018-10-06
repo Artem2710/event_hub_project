@@ -786,11 +786,11 @@ textarea {
 }
 
 .about-event {
-    background: red;
+    background: #a09e9b;
     width: 100% !important;
     margin: 0 !important;
     padding-top: 60px;
-    color: #fff;
+    color: #000000;
 }
 
 
@@ -821,6 +821,13 @@ textarea {
 
 .post:hover .desc{
     color: black;
+}
+.desc{
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-right: 70px;
+    text-overflow: ellipsis;
 }
 
 

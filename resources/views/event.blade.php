@@ -10,6 +10,9 @@
         <div class="banner-btn">
             <a href="{{route('events.index')}}">show events</a>
         </div>
+        @if(Auth::id() == $event->user_id)
+            <a href="{{route('events.edit', ['id' => $event->id])}}">edit</a>
+        @endif
     </div>
 
 @endsection
