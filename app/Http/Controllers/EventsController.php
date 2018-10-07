@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use App\Http\Requests\PostRequest;
+use App\Participant;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class EventsController extends Controller
@@ -14,8 +16,11 @@ class EventsController extends Controller
     public function index()
     {
         $events = Event::all();
+        $participants = Participant::all();
         return view('eventsOnMap', [
             'events' => $events,
+            'participants' => $participants,
+
         ]);
     }
 
@@ -23,10 +28,15 @@ class EventsController extends Controller
      * @param Event $event
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function view(Event $event)
+    public function view(Event $event, User $user)
     {
+        $names = User::where('event_id', '=', 1)->join('participants', function ($join) {
+            $join->on('users.id', '=', 'participants.user_id');
+        })->pluck('name');
+
         return view('event', [
             'event' => $event,
+            'names'=>$names,
         ]);
     }
 

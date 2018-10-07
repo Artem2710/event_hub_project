@@ -792,28 +792,53 @@ textarea {
     padding-top: 60px;
     color: #000000;
 }
-
-
-/*.gmnoprint{*/
-    /*right: 0px !important;*/
-    /*bottom: 0px !important;*/
-/*}*/
-
 .list-events{
     overflow-y:scroll;
-    height: 405px;
+    height: 418px;
     border-top: 1px solid darkgrey;
+
 }
+.list-events::-webkit-scrollbar {
+    width: 10px;
+    overflow: hidden;
+    border: 1px solid #444;
+    margin: 3em;
+}
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb{
+    visibility: hidden;
+}
+.list-events:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+    border-radius: 20px;
+    background-color: rgba(0,0,0,.3);
+}
+
+
+
+
+
+
 .flex{
     display: flex;
     position: relative;
 }
 .flex>a{
     position: absolute;
-    right: 20px;
+    right: 10px;
 }
 .post>a, .post>div{
     margin-left: 5px;
+}
+.post>a{
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-right: 70px;
+    text-overflow: ellipsis;
 }
 .post:hover{
     background: #F0FAFF;

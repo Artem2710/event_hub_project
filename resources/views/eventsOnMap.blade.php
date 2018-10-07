@@ -20,7 +20,9 @@
                                 <a href="">{{$event->title}}</a>
                                 <div class="flex">
                                     <div class="desc">{{$event->description}}</div>
-                                    <a href="/events/{{$event->id}}">more</a>
+                                    @foreach($participants as $participant)
+                                        <a href="/events/{{$event->id}}/{{$participant->id}}">more</a>
+                                    @endforeach
                                 </div>
                             </div>
                         @endforeach
