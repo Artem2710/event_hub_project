@@ -2,14 +2,16 @@
 /**
  * Created by PhpStorm.
  * User: artem
- * Date: 02.10.2018
- * Time: 14:49
+ * Date: 15.10.2018
+ * Time: 15:17
  */
+
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostRequest extends FormRequest
+
+class TypeRequest extends FormRequest
 {
     public function authorize()
     {
@@ -18,10 +20,7 @@ class PostRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|',
             'type' => 'required|',
-            'dateTime' => 'required|',
-            'description' => 'required|min:10|max:500',
         ];
     }
     public function messages()

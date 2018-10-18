@@ -16,5 +16,7 @@ class Event extends Model
         'user_id',
         'title',
         'description',
+        'type',
+        'dateTime',
     ];
 }

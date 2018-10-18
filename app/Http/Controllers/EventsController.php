@@ -4,39 +4,79 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use App\Http\Requests\PostRequest;
+use App\Http\Requests\TypeRequest;
 use App\Participant;
 use App\User;
+use http\Env\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 
 class EventsController extends Controller
 {
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+//    public function index(Event $event)
+//    {
+//        $events = Event::all();
+//        $participants = Participant::all();
+//
+//
+//        $names = User::where('events.id', '=', $event->id)->join('events', function ($join) {
+//            $join->on('events.user_id', '=', 'users.id');
+//        })->pluck('name');
+//
+//
+//        return view('eventsOnMap', [
+//            'events' => $events,
+//            'participants' => $participants,
+//            'names' => $names,
+//        ]);
+//    }
+
+
+    public function index(Event $event)
     {
-        $events = Event::all();
-        $participants = Participant::all();
+//        $events = Event::get();
+        $selectValue = Input::get('type');
+        $events = DB::table('events')
+            ->where('type', 'like', "$selectValue")
+            ->get();
+
+//        $names = User::where('events.id', '=', $event->id)->join('events', function ($join) {
+//            $join->on('events.user_id', '=', 'users.id');
+//        })->pluck('name');
+
+
         return view('eventsOnMap', [
             'events' => $events,
-            'participants' => $participants,
-
+//            'names' => $names,
         ]);
     }
 
+    public function events()
+    {
+        $events = Event::get();
+        return response()->json($events);
+    }
+
+
     /**
      * @param Event $event
+     * @param User $user
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function view(Event $event, User $user)
+    public function view(Event $event, User $user, Participant $participant)
     {
-        $names = User::where('event_id', '=', 1)->join('participants', function ($join) {
+        $names = User::where('event_id', '=', $event->id)->join('participants', function ($join) {
             $join->on('users.id', '=', 'participants.user_id');
         })->pluck('name');
 
         return view('event', [
             'event' => $event,
-            'names'=>$names,
+            'names' => $names,
+            'participant' => $participant,
         ]);
     }
 

@@ -817,10 +817,18 @@ textarea {
     background-color: rgba(0,0,0,.3);
 }
 
+.footer-area {
+    background: #232323;
+    color: #ffffff;
+    padding: 10px 0;
+}
 
 
 
 
+select{
+    color: #000;
+}
 
 .flex{
     display: flex;
@@ -830,10 +838,10 @@ textarea {
     position: absolute;
     right: 10px;
 }
-.post>a, .post>div{
+.post>p, .post>div{
     margin-left: 5px;
 }
-.post>a{
+.post>p{
     display: block;
     white-space: nowrap;
     overflow: hidden;
@@ -842,6 +850,7 @@ textarea {
 }
 .post:hover{
     background: #F0FAFF;
+    color: #000;
 }
 
 .post:hover .desc{
@@ -853,6 +862,9 @@ textarea {
     overflow: hidden;
     padding-right: 70px;
     text-overflow: ellipsis;
+}
+.post{
+    border-bottom: 1px solid #fff;
 }
 
 
