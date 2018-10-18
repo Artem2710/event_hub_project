@@ -1,4 +1,4 @@
-@extends('header')
+@extends('layouts.app')
 
 
 @section('banner')
@@ -26,7 +26,7 @@
                                         </span>
                                     </h1>
                                     <div class="banner-btn">
-                                        <a href="{{route('events')}}">show events</a>
+                                        <a href="{{route('events.index')}}">show events</a>
                                     </div>
 
                                 </section>
@@ -78,5 +78,14 @@
         </div>
     </div>
 
-    <!--about area ends-->
+    <div class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                    <p>&copy; EVENT_HUB</p> <!--edit here-->
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection

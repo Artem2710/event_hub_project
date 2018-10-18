@@ -1,26 +1,50 @@
-@extends('header')
+@extends('layouts.app')
 
 
 @section('eventsOnMap')
-    <!--Services Area Starts-->
 
     <div id="services" class="services-area section-padding">
         <div class="container events">
             <div class="row">
-                <div class="single-contact text-left">
-                    <i class="fa fa-home"></i>
+                <div class="single-contact text-left" style="">
                     <h2>Location</h2>
-                    <p>123, New York, USA</p> <!--edit here-->
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
-                    <div class="banner-btn">
-                        <a href="{{route('event')}}">join to event</a>
+                    <form method="get" action="{{route('events.index')}}">
+                        <div>
+                            <label for="type">Event type:</label>
+                            <select id="type" name="type">
+                                <option value="%">all</option>
+                                <option value="other">other</option>
+                                <option value="sport">sport</option>
+                                <option value="movie">movie</option>
+                                <option value="theatre">theatre</option>
+                                <option value="concert">concert</option>
+                                <option value="flashMob">flash mob</option>
+                            </select>
+                            <button>sort</button>
+                        </div>
+                    </form>
+                    @auth
+                        <a href="{{url('/create')}}">Add event +</a>
+                    @else
+                        <a href="{{ route('register') }}">Add event +</a>
+                    @endauth
+                    <div class="list-events">
+                        @foreach($events as $event)
+                            <div class="post">
+                                <p href="">Title: {{$event->title}}</p>
+                                {{--@foreach($names as $name)--}}
+                                    {{--<p>Author: {{ $name }}</p>--}}
+                                {{--@endforeach--}}
+                                <div class="flex">
+                                    <div class="desc">Type: {{$event->type}}</div>
+                                    <a href="/events/{{$event->id}}">more</a>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!--Services Area Ends-->
-
 
 @endsection

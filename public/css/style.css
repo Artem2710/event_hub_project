@@ -324,6 +324,13 @@ img {
 .navbar {
     border: 0;
     margin-bottom: 0;
+    position: fixed;
+    width: 100%;
+    background: none;
+}
+.navbar-back{
+    /*background: darkgrey;*/
+    color: white !important;
 }
 
 .navbar-brand {
@@ -726,13 +733,13 @@ canvas {
 
 .single-contact {
     /*box-shadow: 0 0px 5px rgba(0, 0, 0, .2);*/
-    padding: 2%;
+    overflow:hidden;
 }
 
 /*-------- Contact area ends----------- */
 
 .events {
-    width: 25% !important;
+    width: 300px !important;
     margin: 0;
     height: 80%;
     position: absolute;
@@ -779,21 +786,86 @@ textarea {
 }
 
 .about-event {
-    background: #54454c;
-    height: 100%;
+    background: #a09e9b;
     width: 100% !important;
     margin: 0 !important;
     padding-top: 60px;
-    color: #fff;
+    color: #000000;
+}
+.list-events{
+    overflow-y:scroll;
+    height: 418px;
+    border-top: 1px solid darkgrey;
+
+}
+.list-events::-webkit-scrollbar {
+    width: 10px;
+    overflow: hidden;
+    border: 1px solid #444;
+    margin: 3em;
+}
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb{
+    visibility: hidden;
+}
+.list-events:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+    border-radius: 20px;
+    background-color: rgba(0,0,0,.3);
+}
+
+.footer-area {
+    background: #232323;
+    color: #ffffff;
+    padding: 10px 0;
 }
 
 
-/*.gmnoprint{*/
-    /*right: 0px !important;*/
-    /*bottom: 0px !important;*/
-/*}*/
 
 
+select{
+    color: #000;
+}
+
+.flex{
+    display: flex;
+    position: relative;
+}
+.flex>a{
+    position: absolute;
+    right: 10px;
+}
+.post>p, .post>div{
+    margin-left: 5px;
+}
+.post>p{
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-right: 70px;
+    text-overflow: ellipsis;
+}
+.post:hover{
+    background: #F0FAFF;
+    color: #000;
+}
+
+.post:hover .desc{
+    color: black;
+}
+.desc{
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-right: 70px;
+    text-overflow: ellipsis;
+}
+.post{
+    border-bottom: 1px solid #fff;
+}
 
 
 
