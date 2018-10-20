@@ -12,7 +12,7 @@
         @endforeach
 
         <div class="banner-btn">
-            <a href="{{route('events.index')}}">show events</a>
+            <a href="{{url('/events')}}">show events</a>
         </div>
 
         @if(Auth::id() == $event->user_id)

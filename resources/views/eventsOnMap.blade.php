@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="single-contact text-left" style="">
                     <h2>Location</h2>
-                    <form method="get" action="{{route('events.index')}}">
+                    <form method="get" action="{{url('/events')}}">
                         <div>
                             <label for="type">Event type:</label>
                             <select id="type" name="type">
@@ -32,9 +32,7 @@
                         @foreach($events as $event)
                             <div class="post">
                                 <p href="">Title: {{$event->title}}</p>
-                                {{--@foreach($names as $name)--}}
-                                    {{--<p>Author: {{ $name }}</p>--}}
-                                {{--@endforeach--}}
+                                <p>Author: {{ $event->getEventerUsername() }}</p>
                                 <div class="flex">
                                     <div class="desc">Type: {{$event->type}}</div>
                                     <a href="/events/{{$event->id}}">more</a>

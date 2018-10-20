@@ -19,4 +19,30 @@ class Event extends Model
         'type',
         'dateTime',
     ];
+
+
+    public function getEventerUsername()
+    {
+        return User::where('id', $this->user_id)->first()->name;
+    }
+
+    /**
+     * @param Event $event
+     * @return mixed
+     */
+    public static function view(Event $event)
+    {
+        $names = User::where('event_id', '=', $event->id)->join('participants', function ($join) {
+            $join->on('users.id', '=', 'participants.user_id');
+        })->pluck('name');
+        return $names;
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }
