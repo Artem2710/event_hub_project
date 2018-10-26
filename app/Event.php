@@ -32,8 +32,8 @@ class Event extends Model
      */
     public static function view(Event $event)
     {
-        $names = User::where('event_id', '=', $event->id)->join('participants', function ($join) {
-            $join->on('users.id', '=', 'participants.user_id');
+        $names = User::where('event_id', '=', $event->id)->join('event_user', function ($join) {
+            $join->on('users.id', '=', 'event_user.user_id');
         })->pluck('name');
         return $names;
     }
@@ -44,5 +44,10 @@ class Event extends Model
     public function user()
     {
         return $this->belongsTo('App\User');
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany('App\User', 'event_user',  'event_id', 'user_id');
     }
 }

@@ -27,8 +27,10 @@ Route::post('/events', 'EventsController@store')->name('events.store');
 Route::put('events/{event}', 'EventsController@edit')->name('events.update');
 Route::get('events/{event}/edit', 'EventsController@update')->name('events.edit');
 
-Route::post('/events/{event}', 'ParticipantController@store')->name('participate');
-Route::delete('/events/{event}', 'ParticipantController@delete')->name('participate.delete');
+Route::post('/events/{event}', 'ParticipantController@connectLeave')->name('participate');
+
+
+Route::get('/ev', 'ParticipantController@test');
 
 
 
