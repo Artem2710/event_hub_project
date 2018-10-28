@@ -22,7 +22,7 @@
             <form method="post" action="{{route('participate', ['event' => $event, 'names' => $names,])}}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div>
-                    <button name="event_id" value="{{$event->id}}">connect</button>
+                    <button name="event_id" value="{{$event->id}}">{{$check}}</button>
                 </div>
                 @if ($errors->has('event'))
                     <span class="help-block">

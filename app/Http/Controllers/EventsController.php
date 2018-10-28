@@ -32,11 +32,13 @@ class EventsController extends Controller
     public function view(Event $event, Participant $participant)
     {
         $names = App\Event::view($event);
+        $check = App\Participant::check($event);
 
         return view('event', [
             'event' => $event,
             'names' => $names,
             'participant' => $participant,
+            'check' => $check,
         ]);
     }
 

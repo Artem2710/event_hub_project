@@ -28,4 +28,16 @@ class Participant extends Model
             $event->users()->attach(Auth::id());
         }
     }
+
+    public static function check(Event $event)
+    {
+        $event = Event::find($event->id);
+
+        if (DB::table('event_user')->where('user_id', '=', Auth::id())->where('event_id', '=', $event->id)->exists()) {
+            $check = "leave";
+        } else {
+            $check = "connect";
+        }
+        return $check;
+    }
 }
