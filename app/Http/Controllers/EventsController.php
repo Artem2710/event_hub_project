@@ -19,7 +19,7 @@ class EventsController extends Controller
     public function index(Event $authors)
     {
         $selectValue = Input::get('type');
-        $events =  Event::where('type', 'like', "$selectValue")
+        $events =  Event::where('type', 'like', "$selectValue")->where('dateTime', '>', NOW())
             ->get();
         return view('eventsOnMap')->with('events', $events);
     }
