@@ -34,6 +34,20 @@
     <!--Responsive css-->
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 
+    {{--maps--}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+    <script src="http://maps.google.com/maps/api/js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.24/gmaps.js"></script>
+
+
+    <style type="text/css">
+        #mymap {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 
 </head>
 <body>

@@ -8,6 +8,7 @@ use App\Participant;
 use App\User;
 use App;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 
 class EventsController extends Controller
@@ -21,7 +22,9 @@ class EventsController extends Controller
         $selectValue = Input::get('type');
         $events =  Event::where('type', 'like', "$selectValue")->where('dateTime', '>', NOW())
             ->get();
-        return view('eventsOnMap')->with('events', $events);
+        $locations = DB::table('location')->get();
+
+        return view('eventsOnMap')->with('events', $events)->with('locations', $locations);
     }
 
     /**

@@ -338,7 +338,7 @@ img {
     text-transform: uppercase;
     font-size: 25px;
     display: block;
-    color: #ffffff;
+    color: #services;
     font-weight: 800;
 }
 
@@ -867,6 +867,12 @@ select{
     border-bottom: 1px solid #fff;
 }
 
+.gmnoprint{
+    display: none !important;
+}
+.gm-style>button{
+    display: none !important;
+}
 
 
 
