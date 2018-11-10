@@ -45,6 +45,7 @@ body {
     line-height: 1.7;
     color: #333333;
     font-weight: 400;
+    background: lightgrey;
 }
 
 h1,
@@ -329,7 +330,6 @@ img {
     background: none;
 }
 .navbar-back{
-    /*background: darkgrey;*/
     color: white !important;
 }
 
@@ -745,7 +745,7 @@ canvas {
     position: absolute;
     z-index: 1001;
     bottom: 0;
-    background: #444;
+    background: rgba(0, 0, 0, 0.8);
     color: #fff;
 }
 
@@ -786,7 +786,7 @@ textarea {
 }
 
 .about-event {
-    background: #a09e9b;
+    /*background: #a09e9b;*/
     width: 100% !important;
     margin: 0 !important;
     padding-top: 60px;
@@ -814,7 +814,7 @@ textarea {
 .list-events:hover::-webkit-scrollbar-thumb {
     visibility: visible;
     border-radius: 20px;
-    background-color: rgba(0,0,0,.3);
+    background-color: rgba(255,255,255, 0.4);
 }
 
 .footer-area {
@@ -873,7 +873,42 @@ select{
 .gm-style>button{
     display: none !important;
 }
+#map_canvas {
+    width:450px !important;
+    height:450px !important;
 
+}
+.col-sm-5{
+    padding-top: 60px;
+}
+.col-sm-7{
+    padding-top: 52px;
+    height: 510px;
+}
+.banner-btn{
+    margin-right: 10px;
+}
+.banner-btn>button{
+    background: none;
+    border: none;
+}
+.buttons{
+    position: absolute;
+    bottom: 0;
+}
+.exetends{
+    display: flex;
+}
+.form-group{
+    margin-bottom: 10px;
+}
+#map {
+    width: 100%;
+    height: 100%;
+}
+.events #allData {
+    display: none;
+}
 
 
 

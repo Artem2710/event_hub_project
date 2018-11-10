@@ -19,6 +19,12 @@ class CreateEventsTable extends Migration
             $table->text('description');
             $table->text('type');
             $table->dateTime('dateTime');
+            $table->text('country');
+            $table->text('city');
+            $table->text('street')->nullable();
+            $table->text('house')->nullable();
+            $table->text('longitude');
+            $table->text('latitude');
             $table->integer('user_id')->unsigned();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');

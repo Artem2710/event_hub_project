@@ -26,7 +26,7 @@ class TypeRequest extends FormRequest
     public function messages()
     {
         return [
-            'title.required' => 'что-то'
+            'title.required' => 'The title field is required.'
         ];
     }
 }

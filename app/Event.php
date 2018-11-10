@@ -9,6 +9,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Input;
+
 
 class Event extends Model
 {
@@ -18,9 +20,34 @@ class Event extends Model
         'description',
         'type',
         'dateTime',
+        'latitude',
+        'longitude',
+        'house',
+        'street',
+        'city',
+        'country',
     ];
 
+    /**
+     * @return mixed
+     */
+    public static function getAllEvents()
+    {
+        $selectValue = Input::get('type');
 
+        if (!empty ($selectValue)) {
+            $events = Event::where('type', 'like', "$selectValue")->where('dateTime', '>', NOW())
+                ->get();
+        } else {
+            $events = Event::where('dateTime', '>', NOW())
+                ->get();
+        }
+        return $events;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getEventerUsername()
     {
         return User::where('id', $this->user_id)->first()->name;
@@ -32,10 +59,10 @@ class Event extends Model
      */
     public static function view(Event $event)
     {
-        $names = User::where('event_id', '=', $event->id)->join('event_user', function ($join) {
+        $participantNames = User::where('event_id', '=', $event->id)->join('event_user', function ($join) {
             $join->on('users.id', '=', 'event_user.user_id');
         })->pluck('name');
-        return $names;
+        return $participantNames;
     }
 
     /**
@@ -48,6 +75,6 @@ class Event extends Model
 
     public function users()
     {
-        return $this->belongsToMany('App\User', 'event_user',  'event_id', 'user_id');
+        return $this->belongsToMany('App\User', 'event_user', 'event_id', 'user_id');
     }
 }

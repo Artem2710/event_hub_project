@@ -29,7 +29,6 @@ Route::get('events/{event}/edit', 'EventsController@update')->name('events.edit'
 
 Route::post('/events/{event}', 'ParticipantController@connectLeave')->name('participate');
 
-//Route::get('auto-complete-city', 'AutoCompleteController@gmaps');
 
 
 

@@ -21,13 +21,13 @@ class PostRequest extends FormRequest
             'title' => 'required|',
             'type' => 'required|',
             'dateTime' => 'required|',
-            'description' => 'required|min:10|max:500',
+            'description' => 'required|min:10|max:1000',
         ];
     }
     public function messages()
     {
         return [
-            'title.required' => 'что-то'
+            'title.required' => 'The title field is required.'
         ];
     }
 }

@@ -10,7 +10,7 @@ class ParticipantController extends Controller
 {
     public function connectLeave(Event $event)
     {
-        $participant = App\Participant::participant($event);
+        App\Participant::participant($event);
         return Redirect::back();
     }
 

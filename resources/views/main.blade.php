@@ -12,13 +12,12 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <section class="intro animate-scale">
-
-                                    <h3>Welcome to Event_hub</h3>
+                                    <h1>Welcome to Event_Hub</h1>
 
                                     <h1 class="ah-headline">
 
                                         <span class="ah-words-wrapper">
-                                            <b class="is-visible">сыграем в футбол</b>
+                                            {{--<b class="is-visible">сыграем в футбол</b>--}}
                                             <!--edit the designation if you are in different profession-->
                                         {{--<b>гоу тусить</b> --}}
                                         {{--<b>пойдем бухать?</b>--}}

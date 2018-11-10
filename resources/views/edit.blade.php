@@ -39,9 +39,39 @@
                     <div>{{ $errors->first('dateTime') }}</div>
                 @endif
             </div>
+
+            <div id="map" style="height: 200px; width: 200px;"></div>
+            <div class="form-group">
+                <label for="address" class="col-md-4 control-label">Address</label>
+                <input   id="address" type="text" class="form-control" name="address" required>
+            </div>
+
+            <div class="form-group">
+                <input   id="latitude" type="hidden" class="form-control" name="latitude" required>
+            </div>
+
+            <div class="form-group">
+                <input   id="longitude" type="hidden" class="form-control" name="longitude"  required>
+            </div>
+
+            <div class="form-group">
+                <input   id="house" type="hidden" class="form-control" name="house"  >
+            </div>
+
+            <div class="form-group">
+                <input   id="street" type="hidden" class="form-control" name="street"  >
+            </div>
+            <div class="form-group">
+                <input   id="city" type="hidden" class="form-control" name="city"  >
+            </div>
+
+            <div class="form-group">
+                <input   id="country" type="hidden" class="form-control" name="country"  >
+            </div>
+
             <button>edit</button>
         </form>
     </div>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgD5jrmV7TZa1AWIKaRTzrjluLSRVph5E&libraries=places&callback=initMap"></script>
 @endsection
 

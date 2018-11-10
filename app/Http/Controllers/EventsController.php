@@ -5,12 +5,9 @@ namespace App\Http\Controllers;
 use App\Event;
 use App\Http\Requests\PostRequest;
 use App\Participant;
-use App\User;
 use App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Input;
-
 class EventsController extends Controller
 {
     /**
@@ -19,27 +16,26 @@ class EventsController extends Controller
      */
     public function index(Event $authors)
     {
-        $selectValue = Input::get('type');
-        $events =  Event::where('type', 'like', "$selectValue")->where('dateTime', '>', NOW())
-            ->get();
-        $locations = DB::table('location')->get();
 
-        return view('eventsOnMap')->with('events', $events)->with('locations', $locations);
+        $events = App\Event::getAllEvents();
+        $allData = json_encode($events, true);
+
+        return view('eventsOnMap')->with('events', $events)->with('allData', $allData);
     }
 
     /**
      * @param Event $event
-     * @param User $user
+     * @param Participant $participant
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function view(Event $event, Participant $participant)
     {
-        $names = App\Event::view($event);
+        $participantNames = App\Event::view($event);
         $check = App\Participant::check($event);
 
         return view('event', [
             'event' => $event,
-            'names' => $names,
+            'participantNames' => $participantNames,
             'participant' => $participant,
             'check' => $check,
         ]);
@@ -87,5 +83,10 @@ class EventsController extends Controller
         $event->fill($request->all());
         $event->save();
         return redirect(route('events.index'));
+    }
+    public function companies()
+    {
+        $companies = DB::table('events')->get();
+        return response()->json($companies);
     }
 }

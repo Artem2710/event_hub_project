@@ -2,7 +2,12 @@
 
 
 @section('eventsOnMap')
-
+    <style>
+        .navbar {
+            background:rgba(0, 0, 0, 0.7);
+            padding-bottom: 10px;
+        }
+    </style>
     <div id="services" class="services-area section-padding" style="position: absolute;">
         <div class="container events">
             <div class="row">
@@ -40,30 +45,13 @@
                             </div>
                         @endforeach
                     </div>
+                    <?php echo '<div id="allData">' . $allData .'</div>'; ?>
                 </div>
             </div>
         </div>
     </div>
-    <div id="mymap"></div>
-
-
-    <script type="text/javascript">
-        var locations = <?php print_r(json_encode($locations)) ?>;
-        var mymap = new GMaps({
-            el: '#mymap',
-            lat: 49.988358,
-            lng: 36.232845,
-            zoom:12
-        });
-        $.each( locations, function( index, value ){
-            mymap.addMarker({
-                lat: value.lat,
-                lng: value.lng,
-                title: value.city,
-                click: function(e) {
-                    alert('This is '+value.city+', gujarat from Ukraine.');
-                }
-            });
-        });
+    <div id="map"></div>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIsmDeJkfwTQJb0dZN-rFA1iJenf084aM&callback=loadMap">
     </script>
 @endsection
