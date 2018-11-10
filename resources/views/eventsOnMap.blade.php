@@ -4,7 +4,7 @@
 @section('eventsOnMap')
     <style>
         .navbar {
-            background:rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.7);
             padding-bottom: 10px;
         }
     </style>
@@ -45,7 +45,7 @@
                             </div>
                         @endforeach
                     </div>
-                    <?php echo '<div id="allData">' . $allData .'</div>'; ?>
+                    <div id="allData"> {{$allData}}</div>
                 </div>
             </div>
         </div>
