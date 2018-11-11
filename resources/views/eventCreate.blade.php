@@ -2,13 +2,6 @@
 
 
 @section('aboutEvent')
-    <style>
-        .navbar {
-            background:rgba(0, 0, 0, 0.5);
-            /*background: lightgrey;*/
-            padding-bottom: 10px;
-        }
-    </style>
     <div class="container about-event">
         <form method="post" action="{{route('events.store')}}">
             <div class="col-sm-5">

@@ -3,7 +3,11 @@
 
 @section('banner')
     <!--Banner area starts-->
-
+    <style>
+        .navbar {
+            background: none !important;
+        }
+    </style>
     <div class="banner-area" id="home">
         <div class="banner-table">
             <div class="banner-table-cell">

@@ -40,6 +40,7 @@
     <script type="text/javascript" src="{{ asset('js/googlemap.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/create-event.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/event.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/participants.js') }}"></script>
 
 
 

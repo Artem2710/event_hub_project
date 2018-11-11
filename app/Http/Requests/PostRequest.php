@@ -21,7 +21,7 @@ class PostRequest extends FormRequest
             'title' => 'required|',
             'type' => 'required|',
             'dateTime' => 'required|',
-            'description' => 'required|min:10|max:1000',
+            'description' => 'required|min:10|max:900',
         ];
     }
     public function messages()

@@ -324,10 +324,10 @@ img {
 
 .navbar {
     border: 0;
-    margin-bottom: 0;
+    padding-bottom: 10px;
     position: fixed;
     width: 100%;
-    background: none;
+    background: rgba(0, 0, 0, 0.7);
 }
 .navbar-back{
     color: white !important;
@@ -883,7 +883,7 @@ select{
 }
 .col-sm-7{
     padding-top: 52px;
-    height: 510px;
+    /*height: 510px;*/
 }
 .banner-btn{
     margin-right: 10px;
@@ -893,8 +893,8 @@ select{
     border: none;
 }
 .buttons{
-    position: absolute;
-    bottom: 0;
+    /*position: absolute;*/
+    /*bottom: 0;*/
 }
 .exetends{
     display: flex;
@@ -909,7 +909,31 @@ select{
 .events #allData {
     display: none;
 }
-
+.data{
+    margin-bottom: 50px;
+}
+.participants{
+    display: inline-block;
+    margin-right: 5px;
+}
+.spoiler-title{
+    cursor:pointer;
+}
+.spoiler-body{
+    display:none;
+}
+.dropdown-menu{
+    background: rgba(0, 0, 0, 0.7) !important;
+}
+.btn{
+    padding:5px 20px !important;
+}
+.form-control{
+    width: 300px !important;
+}
+.panel-body{
+    margin-top: 50px;
+}
 
 
 

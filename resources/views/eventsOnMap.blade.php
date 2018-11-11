@@ -2,12 +2,6 @@
 
 
 @section('eventsOnMap')
-    <style>
-        .navbar {
-            background: rgba(0, 0, 0, 0.7);
-            padding-bottom: 10px;
-        }
-    </style>
     <div id="services" class="services-area section-padding" style="position: absolute;">
         <div class="container events">
             <div class="row">
