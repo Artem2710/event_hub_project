@@ -16,7 +16,9 @@ function showAllEvents(allData) {
     var infoWind = new google.maps.InfoWindow;
     Array.prototype.forEach.call(allData, function(data){
         var content = document.createElement('div');
-        var strong = document.createElement('strong');
+        var strong = document.createElement('a');
+        strong.setAttribute('href', 'events/' + data.id);
+        strong.setAttribute('style', 'color: black');
 
         strong.textContent = data.title;
         content.appendChild(strong);

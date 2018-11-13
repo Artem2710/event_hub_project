@@ -741,7 +741,6 @@ canvas {
 .events {
     width: 300px !important;
     margin: 0;
-    height: 80%;
     position: absolute;
     z-index: 1001;
     bottom: 0;

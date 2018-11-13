@@ -39,7 +39,7 @@
                             </div>
                         @endforeach
                     </div>
-                    <div id="allData"> {{$allData}}</div>
+                    <a id="allData" href="/events/{{$event->id}}">{{$allData}}</a>
                 </div>
             </div>
         </div>
