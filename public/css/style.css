@@ -874,7 +874,7 @@ select{
     display: none !important;
 }
 #map_canvas {
-    width:450px !important;
+    width:100% !important;
     height:450px !important;
 
 }
