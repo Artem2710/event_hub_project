@@ -18,8 +18,8 @@ class CreateEventUserTable extends Migration
             $table->integer('event_id')->unsigned();
             $table->timestamps();
             $table->unique(['user_id', 'event_id']);
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('event_id')->references('id')->on('events');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
         });
     }
 

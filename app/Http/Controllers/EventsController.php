@@ -8,6 +8,7 @@ use App\Participant;
 use App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+
 class EventsController extends Controller
 {
     /**
@@ -49,6 +50,10 @@ class EventsController extends Controller
         return view('eventCreate');
     }
 
+    /**
+     * @param PostRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function store(PostRequest $request)
     {
         $post = new Event();
@@ -74,6 +79,11 @@ class EventsController extends Controller
         ]);
     }
 
+    /**
+     * @param PostRequest $request
+     * @param Event $event
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function edit(PostRequest $request, Event $event)
     {
         $user = Auth::user();
@@ -84,9 +94,24 @@ class EventsController extends Controller
         $event->save();
         return redirect(route('events.index'));
     }
+
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function companies()
     {
         $companies = DB::table('events')->get();
         return response()->json($companies);
+    }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function delete($id)
+    {
+        $event = Event::find($id);
+        $event->delete();
+        return redirect(route('events.index'));
     }
 }

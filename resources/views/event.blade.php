@@ -22,31 +22,41 @@
     </div>
     <div class="bo" style="position: relative;">
         <div class="buttons" style="position: absolute; right: 0">
-        <div class="exetends">
-            @if(Auth::id() == $event->user_id)
-                <div class="banner-btn">
-                    <a href="{{route('events.edit', ['id' => $event->id])}}">edit</a>
-                </div>
-            @endif
-            @auth
-                <form method="post"
-                      action="{{route('participate', ['event' => $event, 'participantNames' => $participantNames,])}}">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <div class="exetends">
+                @if(Auth::id() == $event->user_id)
                     <div class="banner-btn">
-                        <button name="event_id" value="{{$event->id}}">{{$check}}</button>
+                        <a href="{{route('events.edit', ['id' => $event->id])}}">edit</a>
                     </div>
-                    @if ($errors->has('event'))
-                        <span class="help-block">
+                @endif
+                @if(Auth::id() == $event->user_id)
+                    <form method="post"
+                          action="{{route('events.delete', ['id' => $event->id])}}">
+                        {{method_field('DELETE')}}
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <div class="banner-btn">
+                            <button name="event_id" value="{{$event->id}}">delete</button>
+                        </div>
+                    </form>
+                @endif
+                @auth
+                    <form method="post"
+                          action="{{route('participate', ['event' => $event, 'participantNames' => $participantNames,])}}">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <div class="banner-btn">
+                            <button name="event_id" value="{{$event->id}}">{{$check}}</button>
+                        </div>
+                        @if ($errors->has('event'))
+                            <span class="help-block">
                             <strong>{{ $errors->first('event') }}</strong>
                         </span>
-                    @endif
-                </form>
-            @endauth
-            <div class="banner-btn">
-                <a href="{{url('/events')}}">show events</a>
+                        @endif
+                    </form>
+                @endauth
+                <div class="banner-btn">
+                    <a href="{{url('/events')}}">show events</a>
+                </div>
             </div>
         </div>
-    </div>
     </div>
     <script>
         var address = "<?php echo $event['country'];?>+<?php echo $event['city'];?>+<?php echo $event['street'];?>+<?php echo $event['house'];?>";
