@@ -5,49 +5,50 @@
     <div class="container about-event">
         <form method="post" action="{{route('events.store')}}">
             <div class="col-sm-5">
-                <div id="map" style="height: 400px; width: 400px;"></div>
+                <div id="map" style="height: 428px; width: 100%;"></div>
             </div>
             <div class="col-sm-7">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <div class="form-group">
-                    <label for="title">Title</label><br>
+                <div class="form-group inline">
+                    <label for="title">Название</label><br>
                     <input id='title' name="title" value="{{old('title')}}"/>
                     @if($errors->has('title'))
                         <div>{{ $errors->first('title') }}</div>
                     @endif
                 </div>
-                <div class="form-group">
-                    <label for="description">Description</label><br>
-                    <textarea  id='description' name="description" value="{{old('description')}}"></textarea>
-                    @if($errors->has('description'))
-                        <div>{{ $errors->first('description') }}</div>
-                    @endif
-                </div>
-                <div class="form-group">
-                    <label for="type">Event type</label><br>
+                <div class="form-group inline">
+                    <label for="type">Тип мероприятия</label><br>
                     <select id="type" name="type">
-                        <option value="other">other</option>
-                        <option value="sport">sport</option>
-                        <option value="movie">movie</option>
-                        <option value="theatre">theatre</option>
-                        <option value="concert">concert</option>
-                        <option value="flashMob">flash mob</option>
+                        <option value="другое">другое</option>
+                        <option value="спорт">спорт</option>
+                        <option value="кино">кино</option>
+                        <option value="театр">театр</option>
+                        <option value="концерт">концерт</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="dateTime">Time spending</label><br>
+                <div class="form-group inline">
+                    <label for="dateTime">Время проведения</label><br>
                     <input id="dateTime" name="dateTime" type="datetime-local">
                     @if($errors->has('dateTime'))
                         <div>{{ $errors->first('dateTime') }}</div>
                     @endif
                 </div>
+                <div class="form-group">
+                    <label for="description">Описание</label><br>
+                    <textarea  id='description' name="description" value="{{old('description')}}"></textarea>
+                    @if($errors->has('description'))
+                        <div>{{ $errors->first('description') }}</div>
+                    @endif
+                </div>
 
                 <div class="form-group">
-                    <label for="address" class="col-md-4 control-label">Address</label><br>
-                    <input id="address" type="text" class="form-control" name="address" required>
+                    <label for="address" class="col-md-4 control-label">Место проведения</label><br>
+                    <input id="address" type="text" class="form-control inline" name="address" required>
                     @if($errors->has('address'))
                         <div>{{ $errors->first('address') }}</div>
                     @endif
+                    <button class="banner-btn inline" style="margin-bottom: 20px; margin-top: 0;">Добавить</button>
+
                 </div>
 
                 <div class="form-group">
@@ -72,9 +73,6 @@
                 <div class="form-group">
                     <input id="country" type="hidden" class="form-control" name="country">
                 </div>
-
-
-                <button>Add</button>
             </div>
         </form>
     </div>

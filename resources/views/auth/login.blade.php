@@ -3,7 +3,7 @@
 @section('content')
     <div class="container about-event">
         <div class="row">
-            <div class="col-md-7 col-md-offset-5">
+            <div class="col-md-8 col-md-offset-4">
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}

@@ -8,10 +8,11 @@
         </div>
         <div class="col-sm-7">
             <div class="data">
-                <p>Title: {{$event->title}}</p>
-                <p>Description: {{$event->description}}</p>
-                <p>Time spending: {{$event->dateTime}}</p>
-                <p class="participants">Participants</p><b class="spoiler-title">&#9660;</b>
+                <p><b>Название:</b> {{$event->title}}</p>
+                <p><b>Описание:</b> {{$event->description}}</p>
+                <p><b>Время проведения:</b> {{$event->dateTime}}</p>
+                <p><b>Место проведения:</b> {{$event->country}} {{$event->city}} {{$event->street}} {{$event->house}}</p>
+                <p class="participants"><b>Участники</b></p><b class="spoiler-title">&#9660;</b>
                 <div class="spoiler-body">
                     @foreach($participantNames as $participantName)
                         <p style="margin-left: 20px">{{ $participantName }}</p>
@@ -25,7 +26,7 @@
             <div class="exetends">
                 @if(Auth::id() == $event->user_id)
                     <div class="banner-btn">
-                        <a href="{{route('events.edit', ['id' => $event->id])}}">edit</a>
+                        <a href="{{route('events.edit', ['id' => $event->id])}}">Править</a>
                     </div>
                 @endif
                 @if(Auth::id() == $event->user_id)
@@ -34,7 +35,7 @@
                         {{method_field('DELETE')}}
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="banner-btn">
-                            <button name="event_id" value="{{$event->id}}">delete</button>
+                            <button name="event_id" value="{{$event->id}}">УДАЛИТЬ</button>
                         </div>
                     </form>
                 @endif
@@ -53,7 +54,7 @@
                     </form>
                 @endauth
                 <div class="banner-btn">
-                    <a href="{{url('/events')}}">show events</a>
+                    <a href="{{url('/events')}}">Все меропрития</a>
                 </div>
             </div>
         </div>

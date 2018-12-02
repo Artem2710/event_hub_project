@@ -6,45 +6,47 @@
         <div class="container events">
             <div class="row">
                 <div class="single-contact text-left" style="">
-                    <h2>Location</h2>
+                    {{--<h2>Location</h2>--}}
                     <form method="get" action="{{url('/events')}}">
                         <div>
-                            <label for="type">Event type:</label>
+                            <label for="type">Выберите тип мероприятия</label><br>
                             <select id="type" name="type">
-                                <option value="%">all</option>
-                                <option value="other">other</option>
-                                <option value="sport">sport</option>
-                                <option value="movie">movie</option>
-                                <option value="theatre">theatre</option>
-                                <option value="concert">concert</option>
-                                <option value="flashMob">flash mob</option>
+                                <option value="%">все</option>
+                                <option value="другое">другое</option>
+                                <option value="спорт">спорт</option>
+                                <option value="кино">кино</option>
+                                <option value="театр">театр</option>
+                                <option value="концерт">концерт</option>
                             </select>
-                            <button>sort</button>
+                            <button class="banner-btn" style="padding: 0 5px; margin-top: 0;">sort</button>
                         </div>
                     </form>
                     @auth
-                        <a href="{{url('/create')}}">Add event +</a>
+                        <a href="{{url('/create')}}" class="color">Добавить мероприятие</a>
                     @else
-                        <a href="{{ route('register') }}">Add event +</a>
+                        <a href="{{ route('register') }}" class="color">Добавить мероприятие</a>
                     @endauth
                     <div class="list-events">
                         @foreach($events as $event)
                             <div class="post">
-                                <p href="">Title: {{$event->title}}</p>
-                                <p>Author: {{ $event->getEventerUsername() }}</p>
+                                <p href="">Название: {{$event->title}}</p>
+                                <p>Автор: {{ $event->getEventerUsername() }}</p>
                                 <div class="flex">
-                                    <div class="desc">Type: {{$event->type}}</div>
-                                    <a href="/events/{{$event->id}}">more</a>
+                                    <div class="desc">Тип: {{$event->type}}</div>
+                                    <a href="/events/{{$event->id}}" class="color">больше</a>
                                 </div>
                             </div>
                         @endforeach
                     </div>
+                    @if($event)
                     <a id="allData" href="/events/{{$event->id}}">{{$allData}}</a>
+                        @endif
                 </div>
             </div>
         </div>
     </div>
     <div id="map"></div>
+
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIsmDeJkfwTQJb0dZN-rFA1iJenf084aM&callback=loadMap">
     </script>

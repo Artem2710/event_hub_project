@@ -13,6 +13,7 @@ function loadMap() {
 }
 
 function showAllEvents(allData) {
+
     var infoWind = new google.maps.InfoWindow;
     Array.prototype.forEach.call(allData, function(data){
         var content = document.createElement('div');

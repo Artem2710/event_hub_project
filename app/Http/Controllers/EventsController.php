@@ -21,6 +21,9 @@ class EventsController extends Controller
         $events = App\Event::getAllEvents();
         $allData = json_encode($events, true);
 
+//        $types_event = DB::table('event_type')->get();
+
+
         return view('eventsOnMap')->with('events', $events)->with('allData', $allData);
     }
 
@@ -93,15 +96,6 @@ class EventsController extends Controller
         $event->fill($request->all());
         $event->save();
         return redirect(route('events.index'));
-    }
-
-    /**
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function companies()
-    {
-        $companies = DB::table('events')->get();
-        return response()->json($companies);
     }
 
     /**

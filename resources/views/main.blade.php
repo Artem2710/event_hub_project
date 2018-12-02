@@ -56,25 +56,16 @@
 
                     </div>
                 </div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto consequuntur cum deleniti est
-                ex laborum magni molestias nesciunt, nobis provident quasi quia ratione rem, sapiente ullam ut. At atque
-                autem corporis, deserunt dolores dolorum eos error ex explicabo harum laudantium magni maxime minus
-                molestias nam natus nobis odio praesentium quasi quia quidem quo quod reprehenderit sed similique soluta
-                veritatis. Asperiores corporis dignissimos doloremque harum minima placeat porro rem, repudiandae sed
-                vitae. Alias aliquam amet atque aut culpa cumque dolores ea eligendi enim eos est exercitationem
-                expedita in iure nam omnis, praesentium quas quia quo rem sapiente sit soluta, tempore totam ullam
-                veritatis voluptate! Atque consequuntur deleniti distinctio ducimus ipsa minus optio pariatur
-                praesentium quaerat quia sed, sint. Architecto, consequatur dicta dolor dolorum eius exercitationem,
-                expedita hic illum impedit iure maxime natus nemo, nisi numquam odit officia officiis quo quod
-                reiciendis sapiente sequi temporibus voluptatum? Blanditiis in iure molestias nostrum obcaecati quisquam
-                unde. Animi at atque dolorum eveniet provident sint tempora. Ad adipisci aliquam cupiditate dignissimos
-                dolor, eius eligendi enim est eveniet expedita fugiat hic incidunt iste iure magnam magni, nam
-                perspiciatis porro quo recusandae reiciendis reprehenderit similique soluta unde vero. Ab adipisci
-                asperiores eos et eum, expedita fugiat illum iste iure libero minima neque provident quaerat quisquam
-                sequi tenetur voluptatem. Accusantium ad blanditiis culpa, distinctio dolor est fugiat illum incidunt
-                iusto nostrum, perspiciatis quis sequi ullam vero voluptatem. Adipisci animi possimus qui quis
-                reiciendis. A, animi aperiam asperiores, cum doloremque eos excepturi harum iste magnam obcaecati
-                possimus rerum saepe?
+                <p style="font-size: 15px; text-indent: 20px; ">Этот сайт предоставляет возможность участвовать в мероприятиях, которые происходят в твоем городе.
+                С нашей помощью вы не пропустите ни одного важного события и сможете посетить их узнав все необходимые
+                данные о событие благодаря нашему сайту. На нашем сайте вы найдете информацию о месте проведения, время
+                проведения, название, описание, участниках нужного вам мероприятия. Вы так же можете присоединиться к
+                событию используя для этого логически понятный интерфейс нашего сайта. Все мероприятия отмечены на карте
+                    для лучшего понимания где происходит это мероприятие.</p>
+                <p style="font-size: 15px; margin-bottom: 30px; text-indent: 20px; ">Так же вы сами можете стать организатором любого мероприятия создав его с помощью нашего приложения.
+                Все что вам понадобится для этого – это пройти простую регистрацию и нажать на кнопку «добавить мероприятие».
+                Вы можете указать все необходимые данные, которые считаете нужными в описание к вашему мероприятию.</p>
+
 
             </div>
 

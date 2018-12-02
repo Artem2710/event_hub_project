@@ -457,7 +457,7 @@ canvas {
 .banner-btn {
     background: #E91E63;
     text-decoration: none;
-    padding: 10px 0px;
+    padding: 5px 10px;
     display: inline-block;
     margin-top: 25px;
     color: #fff;
@@ -474,7 +474,7 @@ canvas {
 
 .banner-btn > a {
     color: #fff;
-    padding: 13px 30px;
+    /*padding: 13px 30px;*/
 }
 
 .welcome-text h3 {
@@ -750,7 +750,7 @@ canvas {
 
 textarea {
     width: 95%;
-    height: 300px;
+    height: 250px;
     resize: none;
     color: #000 !important;
 }
@@ -928,12 +928,26 @@ select{
     padding:5px 20px !important;
 }
 .form-control{
-    width: 300px !important;
+    width: 525px !important;
 }
 .panel-body{
     margin-top: 50px;
 }
-
-
+.color{
+    color: #90e9e0 !important;
+}
+body{
+    background: #dfe9e9 !important;
+}
+.control-label{
+    padding: 0 !important;
+}
+.inline{
+    display: inline-block;
+    margin-right: 50px;
+}
+#type, #dateTime{
+    height: 31px;
+}
 
 

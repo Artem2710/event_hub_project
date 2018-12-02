@@ -34,9 +34,9 @@ class Participant extends Model
         $event = Event::find($event->id);
 
         if (DB::table('event_user')->where('user_id', '=', Auth::id())->where('event_id', '=', $event->id)->exists()) {
-            $check = "leave";
+            $check = "ПОКИНУТЬ";
         } else {
-            $check = "connect";
+            $check = "ПРИСОЕДЕНИТЬСЯ";
         }
         return $check;
     }

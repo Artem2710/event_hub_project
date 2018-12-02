@@ -41,7 +41,7 @@ Route::get('/ev', 'ParticipantController@test');
 
 
 
-Route::get('/eve', 'EventsController@events')->name('json');
+Route::get('/eve', 'EventsController@companies')->name('json');
 
 
 
