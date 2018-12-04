@@ -5,19 +5,22 @@
     <div class="container about-event row">
         <div class="col-sm-5">
             <div id="map_canvas"></div>
+
         </div>
         <div class="col-sm-7">
             <div class="data">
                 <p><b>Название:</b> {{$event->title}}</p>
                 <p><b>Описание:</b> {{$event->description}}</p>
                 <p><b>Время проведения:</b> {{$event->dateTime}}</p>
-                <p><b>Место проведения:</b> {{$event->country}} {{$event->city}} {{$event->street}} {{$event->house}}</p>
+                <p><b>Место проведения:</b> {{$event->country}} {{$event->city}} {{$event->street}} {{$event->house}}
+                </p>
                 <p class="participants"><b>Участники</b></p><b class="spoiler-title">&#9660;</b>
                 <div class="spoiler-body">
                     @foreach($participantNames as $participantName)
                         <p style="margin-left: 20px">{{ $participantName }}</p>
                     @endforeach
                 </div>
+                <div id="directions-panel"></div>
             </div>
         </div>
     </div>
@@ -54,11 +57,20 @@
                     </form>
                 @endauth
                 <div class="banner-btn">
+                    <a id="submit" style="cursor:pointer;">Путь</a>
+                </div>
+                <div class="banner-btn">
                     <a href="{{url('/events')}}">Все меропрития</a>
                 </div>
             </div>
         </div>
     </div>
+    <input id="end" type="hidden" name=""
+           value="{{$event->country}}, {{$event->city}}, {{$event->street}}, {{$event->house}}">
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIsmDeJkfwTQJb0dZN-rFA1iJenf084aM&callback=way">
+    </script>
     <script>
         var address = "<?php echo $event['country'];?>+<?php echo $event['city'];?>+<?php echo $event['street'];?>+<?php echo $event['house'];?>";
     </script>

@@ -461,6 +461,7 @@ canvas {
     display: inline-block;
     margin-top: 25px;
     color: #fff;
+    border: none;
     text-transform: uppercase;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
