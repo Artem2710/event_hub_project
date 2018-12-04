@@ -1,7 +1,7 @@
 var autocompletes, marker, infowindow, map;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -33.8688, lng: 151.2195},
+        center: {lat: 49.988358, lng: 36.232845},
         zoom: 13
     });
     infowindow = new google.maps.InfoWindow();
